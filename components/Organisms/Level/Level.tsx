@@ -6,9 +6,9 @@ import { parseCode } from "@/utils/parseCode";
 import { ReactElement, useEffect } from "react";
 
 interface ICardProps {
-  children?: ReactElement;
+  level?: number;
 }
-const Level = ({ children }: ICardProps) => {
+const Level = ({ level }: ICardProps) => {
   const { code } = useCode();
   return (
     <Card>

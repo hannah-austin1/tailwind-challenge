@@ -12,16 +12,10 @@ const level1 = (code: string | undefined) => {
     while ((match = regex.exec(code)) !== null) {
       if (coloursArray.includes(match[1])) {
         classNames.push(match[1]);
+      } else {
+        classNames.push("fill-white");
       }
     }
-
-    if (classNames.length !== 2) {
-      return {
-        bodyStyles: "fill-white",
-        wingStyles: "fill-white",
-      };
-    }
-
     return {
       bodyStyles: classNames[0],
       wingStyles: classNames[1],

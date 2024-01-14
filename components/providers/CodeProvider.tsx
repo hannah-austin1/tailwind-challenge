@@ -1,18 +1,14 @@
 "use client";
 
+import { IStyles } from "@/common/interfaces";
 import { ILevel, levelData } from "@/data/levelData";
 import React from "react";
-
-interface styles {
-  bodyStyles: string;
-  wingStyles: string;
-}
 
 interface ICodeContext {
   level: ILevel;
   setLevel: React.Dispatch<React.SetStateAction<ILevel>>;
-  code: styles;
-  setCode: React.Dispatch<React.SetStateAction<styles>>;
+  code: IStyles;
+  setCode: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const CodeContext = React.createContext<ICodeContext | undefined>(undefined);
