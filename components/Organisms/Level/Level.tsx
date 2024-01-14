@@ -1,9 +1,7 @@
 "use client";
-import { Bee } from "@/components/Atoms";
+import { Bee, Hexagon } from "@/components/Atoms/Icons";
 import { Card } from "@/components/Molecules";
 import { useCode } from "@/components/providers";
-import { parseCode } from "@/utils/parseCode";
-import { ReactElement, useEffect } from "react";
 
 interface ICardProps {
   level?: number;
@@ -11,9 +9,20 @@ interface ICardProps {
 const Level = ({ level }: ICardProps) => {
   const { code } = useCode();
   return (
-    <Card>
-      <Bee bodyStyles={code.bodyStyles} wingStyles={code.wingStyles} />
-    </Card>
+    <>
+      <Card>
+        <div className="grid">
+          {level === 2 && (
+            <div className="col-start-1 row-start-1">
+              <Hexagon />
+            </div>
+          )}
+          <div className="col-start-1 row-start-1">
+            <Bee bodyStyles={code.bodyStyles} wingStyles={code.wingStyles} />
+          </div>
+        </div>
+      </Card>
+    </>
   );
 };
 

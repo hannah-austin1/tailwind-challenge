@@ -1,7 +1,9 @@
 "use client";
 import { Editor } from "@/components/Molecules";
 import { useCode } from "@/components/providers";
+import { isLevelComplete } from "@/utils/isLevelComplete";
 import { parseCode } from "@/utils/parseCode";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface IEditorProps {
@@ -10,15 +12,20 @@ interface IEditorProps {
 }
 
 const EditorForm = ({ level, initialCode }: IEditorProps) => {
+  let colours =
+    "fill-white fill-green-300 fill-red-300 fill-yellow-300 fill-purple-300";
   const { code, setCode } = useCode();
+  const router = useRouter();
   const [editorCode, setEditorCode] = useState(initialCode);
-  //   let colours = "fill-green-300 fill-red-300 fill-yellow-300 fill-purple-300";
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    if (!isLevelComplete) {
+      console.log("level not complete");
+    } else router.push(`/levels/${level + 1}`);
     console.log("Submitted code:", code);
   };
   useEffect(() => {
-    const newCode = parseCode(level, editorCode);
+    const newCode = parseCode(level, editorCode, code);
     setCode(newCode);
   }, [editorCode, setCode]);
   return (
