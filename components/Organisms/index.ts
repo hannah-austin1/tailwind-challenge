@@ -1,2 +1,1 @@
-export { default as EditorForm } from "./EditorForm/EditorForm";
-export { default as Level } from "./Level/Level";
+export { default as LevelLayout } from "./LevelLayout/LevelLayout";

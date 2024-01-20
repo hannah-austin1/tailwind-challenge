@@ -1,4 +1,4 @@
-import { IStyles } from "@/common/interfaces";
+import { IClasses, IStyles } from "@/common/types";
 
 type LevelFunction = (code: string | undefined) => any;
 const level1 = (code: string | undefined) => {
@@ -53,7 +53,11 @@ const levelFunctions: Record<number, LevelFunction> = {
   // Add more functions for other levels if needed
 };
 
-export const parseCode = (level: number, newCode: string, oldCode: IStyles) => {
+export const parseCode = (
+  level: number,
+  newCode: string,
+  oldCode: IClasses
+) => {
   const levelFunction = levelFunctions[level];
 
   if (levelFunction) {

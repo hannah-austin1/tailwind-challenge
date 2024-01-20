@@ -1,4 +1,3 @@
-"user client";
 interface IBeeProps {
   bodyStyles: string;
   wingStyles: string;

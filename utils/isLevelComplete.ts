@@ -1,4 +1,4 @@
-import { IStyles } from "@/common/interfaces";
+import { IStyles } from "@/common/types";
 
 type CompletedCode = (code: IStyles) => any;
 const level1 = (code: IStyles) => {

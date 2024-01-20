@@ -1,13 +1,12 @@
-"use client";
+import { IClasses } from "@/common/types";
 import { Bee, Hexagon } from "@/components/Atoms/Icons";
 import { Card } from "@/components/Molecules";
-import { useCode } from "@/components/providers";
 
 interface ICardProps {
   level?: number;
+  code: IClasses;
 }
-const Level = ({ level }: ICardProps) => {
-  const { code } = useCode();
+const Level = ({ level, code }: ICardProps) => {
   return (
     <>
       <Card>
