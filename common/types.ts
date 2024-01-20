@@ -1,5 +1,9 @@
-export interface ILevelProps {
-  level: number;
+export interface ILevelNumber {
+  level: string;
+}
+
+export interface IPageParams {
+  params: ILevelNumber;
 }
 
 export interface IClasses {
@@ -16,9 +20,7 @@ type KeysAsProperties = {
 
 export interface IStyles extends KeysAsProperties {}
 export interface ILevel {
-  level: number;
   title: string;
   description: string;
-  editorCode: string;
   initialClasses: IClasses;
 }

@@ -3,6 +3,7 @@ interface IBeeProps {
   wingStyles: string;
 }
 const Bee = ({ bodyStyles, wingStyles }: IBeeProps) => {
+  console.log("code", bodyStyles, wingStyles);
   return (
     <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
       <path

@@ -1,5 +1,4 @@
 "use client";
-import { parseCode } from "@/utils/parseCode";
 import MonacoEditor from "@monaco-editor/react";
 
 interface ScriptEditorProps {
@@ -12,11 +11,21 @@ const Editor = ({ code, setCode }: ScriptEditorProps) => {
   };
   return (
     <MonacoEditor
-      height="30vh"
+      height="100%"
       theme="vs-dark"
       defaultLanguage="javascript"
       defaultValue={code}
       onChange={handleEditorChange}
+      options={{
+        automaticLayout: true,
+        autoIndent: "full",
+        scrollBeyondLastColumn: 1,
+        scrollBeyondLastLine: false,
+        wordWrap: "on",
+        minimap: {
+          enabled: false,
+        },
+      }}
     />
   );
 };
